@@ -16,7 +16,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">CLÍNICA SÓ SAÚDE</a>
+                <a class="navbar-brand" href="#">LOJA COMPRE BEM BARATEIRO</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -92,7 +92,7 @@
                             <div class="panel-heading">
                                 <div class="panel-title">
                                     <i class="glyphicon glyphicon-wrench pull-right"></i>
-                                    <h4 id="head_pagina">Cadastrar Departamentos</h4>
+                                    <h4 id="head_pagina">Departamentos</h4>
                                 </div>
                             </div>
                             <div class="panel-body">
@@ -101,6 +101,8 @@
                                         Nome do Departamento</label>
                                     <div class="controls">
                                         <asp:TextBox class="form-control" ID="txtBoxNome" runat="server" Width="765px"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfvNome" ControlToValidate="txtBoxNome" runat="server" 
+                                            ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
                                 <div class="control-group col-md-6">
@@ -108,6 +110,8 @@
                                         Sigla do Departamento</label>
                                     <div class="controls">
                                         <asp:TextBox class="form-control" ID="txtBoxSigla" runat="server" Width="765px"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfvSigla" ControlToValidate="txtBoxSigla" runat="server" 
+                                            ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
                                 <div class="control-group col-md-12">
@@ -115,7 +119,9 @@
                                         Percentual de Comissão do Departamento</label>
                                     <div class="controls">
                                         <asp:TextBox class="form-control" ID="txtBoxComissao" runat="server" Width="765px"></asp:TextBox>
-                                        <br />
+                                       <asp:RequiredFieldValidator ID="rfvComissao" ControlToValidate="txtBoxComissao" runat="server" 
+                                            ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
+                                         <br />
                                     </div>
                                 </div>
                                 <div class="control-group col-md-12">

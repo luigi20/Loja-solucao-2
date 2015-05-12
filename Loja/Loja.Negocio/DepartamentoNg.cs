@@ -63,7 +63,7 @@ namespace Loja.Negocio
 
         public  void Delete(Loja.Objeto.Models.Departamento departamento)
         {
-             Loja.Objeto.DAO.DepartamentoDAO.Delete(departamento);
+             Loja.Objeto.BO.DepartamentoBO.Apagar(departamento);
         }
     }
 }

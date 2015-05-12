@@ -13,7 +13,7 @@ namespace Loja.Objeto.BO
     {
         public static SqlConnection Conectar()
         {
-            string stringConexao =  ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            string stringConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             SqlConnection conexao = new SqlConnection(stringConexao);
             conexao.Open();
             return conexao;
@@ -30,12 +30,13 @@ namespace Loja.Objeto.BO
 
         public static SqlDataReader Selecionar(SqlCommand comando)
         {
+
             SqlConnection con = Conectar();
             comando.Connection = con;
             SqlDataReader dr = comando.ExecuteReader(CommandBehavior.CloseConnection);
             return dr;
         }
 
-      
+
     }
 }

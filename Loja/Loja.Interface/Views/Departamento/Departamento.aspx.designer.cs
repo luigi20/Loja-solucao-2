@@ -31,6 +31,15 @@ namespace Loja.Interface.Views.Departamento {
         protected global::System.Web.UI.WebControls.TextBox txtBoxNome;
         
         /// <summary>
+        /// Controle rfvNome.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNome;
+        
+        /// <summary>
         /// Controle txtBoxSigla.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace Loja.Interface.Views.Departamento {
         protected global::System.Web.UI.WebControls.TextBox txtBoxSigla;
         
         /// <summary>
+        /// Controle rfvSigla.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSigla;
+        
+        /// <summary>
         /// Controle txtBoxComissao.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace Loja.Interface.Views.Departamento {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBoxComissao;
+        
+        /// <summary>
+        /// Controle rfvComissao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvComissao;
         
         /// <summary>
         /// Controle btnCadastrar.

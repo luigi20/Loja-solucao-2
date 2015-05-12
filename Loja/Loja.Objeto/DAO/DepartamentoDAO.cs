@@ -31,8 +31,8 @@ namespace Loja.Objeto.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Update Departamento set Nome_Departamento =@nomeDepartamento," +
-                                  "Sigla_Departamento = @siglaDepartamento,Comissao_Departamento= @comissaoDepartamento"+
+            comando.CommandText = "Update Departamento set Nome_Departamento = @nomeDepartamento," +
+                                  "Sigla_Departamento = @siglaDepartamento,Comissao_Departamento = @comissaoDepartamento"+
                                   "where idDepartamento = @idDepartamento";
             comando.Parameters.AddWithValue("@nomeDepartamento", departamento.NomeDepartamento);
             comando.Parameters.AddWithValue("@siglaDepartamento", departamento.SiglaDepartamento);
@@ -44,7 +44,7 @@ namespace Loja.Objeto.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Delete from Departamento where idDepartamento=@idDepartamento";
+            comando.CommandText = "Delete from Departamento where idDepartamento = @idDepartamento";
             comando.Parameters.AddWithValue("@idDepartamento", departamento.IdDepartamento);
             ConexãoBanco.CRUD(comando);    
         }
@@ -57,13 +57,17 @@ namespace Loja.Objeto.DAO
             comando.Parameters.AddWithValue("@idDepartamento", idDepartamento);
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
             Departamento departamento = Departamento.getInstance;
+            int departamentoId = dr.GetOrdinal("idDepartamento");
+            int nomeDepartamento = dr.GetOrdinal("Nome_Departamento");
+            int siglaDepartamento = dr.GetOrdinal("Sigla_Departamento");
+            int percDepartamento = dr.GetOrdinal("Comissao_Departamento");
             if (dr.HasRows)
             {
                 dr.Read();
-                departamento.IdDepartamento = (int) dr["idDepartamento"];
-                departamento.NomeDepartamento = (string)dr["Nome_Departamento"];
-                departamento.SiglaDepartamento = (string)dr["Sigla_Departamento"];
-                departamento.ComissaoDepartamento = (double)dr["Comissao_Departamento"];
+                departamento.IdDepartamento = dr.GetInt32(idDepartamento);
+                departamento.NomeDepartamento = dr.GetString(nomeDepartamento);
+                departamento.SiglaDepartamento = dr.GetString(siglaDepartamento);
+                departamento.ComissaoDepartamento = dr.GetDouble(percDepartamento);
                 //preenche o objeto
             }
             else
@@ -80,15 +84,20 @@ namespace Loja.Objeto.DAO
             comando.CommandText = "Select * from Departamentos";
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
             List<Departamento> listaDepartamentos = new List<Departamento>();
+            
             if (dr.HasRows)
             {
+                int idDepartamento = dr.GetOrdinal("idDepartamento");
+                int nomeDepartamento = dr.GetOrdinal("Nome_Departamento");
+                int siglaDepartamento = dr.GetOrdinal("Sigla_Departamento");
+                int percDepartamento = dr.GetOrdinal("Comissao_Departamento");
                 while (dr.Read())
                 {
                     Departamento departamento = Departamento.getInstance;
-                    departamento.IdDepartamento = (int)dr["idDepartamento"];
-                    departamento.NomeDepartamento = (string)dr["Nome_Departamento"];
-                    departamento.SiglaDepartamento = (string)dr["Sigla_Departamento"];
-                    departamento.ComissaoDepartamento = (double)dr["Comissao_Departamento"];
+                    departamento.IdDepartamento = dr.GetInt32(idDepartamento);
+                    departamento.NomeDepartamento = dr.GetString(nomeDepartamento);
+                    departamento.SiglaDepartamento = dr.GetString(siglaDepartamento);
+                    departamento.ComissaoDepartamento = dr.GetDouble(percDepartamento);
                     listaDepartamentos.Add(departamento);
                 }
             }

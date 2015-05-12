@@ -49,7 +49,7 @@
                         <ul class="list-unstyled collapse in" id="userMenu">
 
                             <li><a href="../Departamento/Departamento.aspx">Departamento</a></li>
-                            <li><a href="../Produtos/Produtos.aspx">Produto</a></li>
+                            <li><a href="../Produto/Produto.aspx">Produto</a></li>
                             <li><a href="">Produto Similar </a></li>
                             <li><a href="">Venda</a></li>
                             <li><a href="">Registro de Venda</a></li>

@@ -11,7 +11,7 @@ namespace Loja.Interface.Views.Produto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ddlDepartamento.SelectedIndex = -1;
         }
     }
 }

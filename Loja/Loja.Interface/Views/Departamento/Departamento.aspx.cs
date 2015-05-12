@@ -23,7 +23,8 @@ namespace Loja.Interface.Views.Departamento
 
                 
                 int inserir = Loja.Fachada.Fachada.DepartamentoFachada.Insert(txtBoxNome.Text, 
-                                                                              txtBoxSigla.Text, Convert.ToDouble(txtBoxComissao.Text));
+                                                                              txtBoxSigla.Text, 
+                                                                              Convert.ToDouble(txtBoxComissao.Text));
 
                 if (inserir == 1){
 
@@ -32,6 +33,7 @@ namespace Loja.Interface.Views.Departamento
                     txtBoxNome.Text = "";
                     txtBoxSigla.Text ="";
                     this.ExibirMensagem("Departamento Inserido Com Sucesso");
+                    return;
                 }
             }
         }
