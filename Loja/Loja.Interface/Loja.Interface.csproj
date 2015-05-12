@@ -206,6 +206,20 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Loja.Fachada\Loja.Fachada.csproj">
+      <Project>{19000cbd-0b7f-4e35-a316-b55f96ddeb48}</Project>
+      <Name>Loja.Fachada</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loja.Negocio\Loja.Negocio.csproj">
+      <Project>{65b1f148-c7bc-4915-bc22-75e4ec7d2fce}</Project>
+      <Name>Loja.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loja.Objeto\Loja.Objeto.csproj">
+      <Project>{4bb13335-25e8-41d3-914f-a54ca6ab8f45}</Project>
+      <Name>Loja.Objeto</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -123,7 +123,7 @@
                                     </label>
                                     <div class="controls">
 
-                                        <asp:Button class="btn btn-success" ID="btnCadastrar" Text="Cadastrar" runat="server" OnClick="btnCadastrar_Click"  />
+                                        <asp:Button class="btn btn-success" ID="btnCadastrar" Text="Cadastrar" CommandName="New" runat="server"  OnCommand="btnCadastrar_Command"   />
                                         <asp:Button class="btn btn-primary" ID="btnAlterar" runat="server" Text="Alterar" />
                                         <asp:Button class="btn btn-danger" ID="btnExcluir" runat="server" Text="Excluir" />
                                       
