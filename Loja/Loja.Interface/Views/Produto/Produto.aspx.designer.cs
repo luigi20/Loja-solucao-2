@@ -40,13 +40,13 @@ namespace Loja.Interface.Views.Produto {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNome;
         
         /// <summary>
-        /// Controle txtBoxSigla.
+        /// Controle txtBoxPreco.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBoxSigla;
+        protected global::System.Web.UI.WebControls.TextBox txtBoxPreco;
         
         /// <summary>
         /// Controle rfvSigla.
@@ -58,13 +58,13 @@ namespace Loja.Interface.Views.Produto {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSigla;
         
         /// <summary>
-        /// Controle txtBoxComissao.
+        /// Controle txtBoxQuantidade.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBoxComissao;
+        protected global::System.Web.UI.WebControls.TextBox txtBoxQuantidade;
         
         /// <summary>
         /// Controle rfvComissao.
@@ -112,12 +112,12 @@ namespace Loja.Interface.Views.Produto {
         protected global::System.Web.UI.WebControls.Button btnExcluir;
         
         /// <summary>
-        /// Controle SqlDataDepart.
+        /// Controle ObjectDataSource1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataDepart;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
     }
 }

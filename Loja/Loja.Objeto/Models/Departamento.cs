@@ -7,31 +7,25 @@ namespace Loja.Objeto.Models
 {
     public class Departamento
     {
-        private static Departamento instance;
+        
         private int idDepartamento;
         private string nomeDepartamento;
         private string siglaDepartamento;
         private double comissaoDepartamento;
-
+        private List<Produto> listaProdutoDepartamento;
         
-        private Departamento()
+        public Departamento()
         {
 
         }
 
-        public static Departamento getInstance
+        public Departamento(int idDepartamento,string nomeDepartamento,string siglaDepartamento,double comissaoDepartamento)
         {
-            get
-            {
-                if (instance == null)
-                {
-
-                    instance = new Departamento();
-
-                }
-                return instance;
-            }
-
+            this.idDepartamento = idDepartamento;
+            this.nomeDepartamento = nomeDepartamento;
+            this.siglaDepartamento = siglaDepartamento;
+            this.comissaoDepartamento = comissaoDepartamento;
+            this.listaProdutoDepartamento = new List<Produto>();
         }
         public int IdDepartamento
         {

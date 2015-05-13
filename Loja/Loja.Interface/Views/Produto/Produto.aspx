@@ -50,7 +50,7 @@
                         <ul class="list-unstyled collapse in" id="userMenu">
                             
                             <li><a href="Departamento.aspx">Departamento</a></li>
-                            <li><a href="../Produto/Produto.aspx">Produto</a></li>
+                            <li><a href="Produto.aspx">Produto</a></li>
                             <li><a href="">Produto Similar </a></li>
                             <li><a href="">Venda</a></li>
                             <li><a href="">Registro de Venda</a></li>
@@ -109,7 +109,7 @@
                                     <label>
                                         Preco do Produto</label>
                                     <div class="controls">
-                                        <asp:TextBox class="form-control" ID="txtBoxSigla" runat="server" Width="765px"></asp:TextBox>
+                                        <asp:TextBox class="form-control" ID="txtBoxPreco" runat="server" Width="765px"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvSigla" ControlToValidate="txtBoxSigla" runat="server" 
                                             ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </div>
@@ -118,7 +118,7 @@
                                     <label>
                                         Quantidade do Produto</label>
                                     <div class="controls">
-                                        <asp:TextBox class="form-control" ID="txtBoxComissao" runat="server" Width="765px"></asp:TextBox>
+                                        <asp:TextBox class="form-control" ID="txtBoxQuantidade" runat="server" Width="765px"></asp:TextBox>
                                        <asp:RequiredFieldValidator ID="rfvComissao" ControlToValidate="txtBoxComissao" runat="server" 
                                             ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                          <br />
@@ -128,9 +128,7 @@
                                     <label>
                                         Departamento do Produto</label>
                                     <div class="controls">
-                                        <asp:DropDownList class="form-control" ID="ddlDepartamento" name="dpl_atendimento"
-                                            runat="server" DataSourceID="SqlDataDepart" DataTextField="Nome_Departamento" >
-   
+                                        <asp:DropDownList ID="ddlDepartamento" runat="server" DataSourceID="ObjectDataSource1" DataTextField="NomeDepartamento" DataValueField="IdDepartamento">
                                         </asp:DropDownList>
                                     </div>
                                 </div>
@@ -139,11 +137,9 @@
                                     </label>
                                     <div class="controls">
 
-                                        <asp:Button class="btn btn-success" ID="btnCadastrar" Text="Cadastrar"  runat="server"    />
+                                        <asp:Button class="btn btn-success" ID="btnCadastrar" Text="Cadastrar"  runat="server" OnCommand="btnCadastrar_Command"    />
                                         <asp:Button class="btn btn-primary" ID="btnAlterar" runat="server" Text="Alterar" />
                                         <asp:Button class="btn btn-danger" ID="btnExcluir" runat="server" Text="Excluir" />
-                                      
-                                        <asp:SqlDataSource ID="SqlDataDepart" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Nome_Departamento] FROM [Departamento]"></asp:SqlDataSource>
                                       
                                     </div>
                                 </div>
@@ -153,6 +149,7 @@
                         <!--/panel-->
                     </div>
                     <!--/col-span-12-->
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listarDepartamento" TypeName="Loja.Fachada.Fachada.DepartamentoFachada"></asp:ObjectDataSource>
                 </div>
                 <!--/row-->
                 <hr />

@@ -7,29 +7,24 @@ namespace Loja.Objeto.Models
 {
     public class Produto
     {
-        private static Produto instance;
+     
         private int idProduto;
         private int departamentoProduto;
         private string nomeProduto;
         private double precoProduto;
         private int quantidadeProduto;
 
-        private Produto()
+        public Produto()
         {
 
         }
-        public static Produto getInstance
+        public  Produto (int idProduto, int departamentoProduto,string nomeProduto,double precoProduto,int quantidadeProduto )
         {
-            get
-            {
-                if (instance == null)
-                {
-
-                    instance = new Produto();
-
-                }
-                return instance;
-            }
+            this.idProduto = idProduto;
+            this.nomeProduto = nomeProduto;
+            this.precoProduto = precoProduto;
+            this.quantidadeProduto = quantidadeProduto;
+            this.departamentoProduto = departamentoProduto;
 
         }
 

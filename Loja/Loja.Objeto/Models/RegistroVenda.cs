@@ -8,6 +8,7 @@ namespace Loja.Objeto.Models
 {
     public class RegistroVenda
     {
+        private Departamento departamento;
 
         private int idVenda;
 
@@ -28,6 +29,19 @@ namespace Loja.Objeto.Models
             this.idVendedor = idVendedor;
         }
 
+        public Departamento Departamento
+        {
+            get
+            {
+                if (this.departamento == null)
+                {
+                    this.departamento = DepartamentoDAO.BuscarPorId(idDepartamento);
+                }
+
+                return departamento;
+            }
+            set { Departamento = value; }
+        }
         public int IdVendedor
         {
             get { return idVendedor; }
@@ -42,13 +56,15 @@ namespace Loja.Objeto.Models
 
         public int IdDepartamento
         {
-            get {
-//                if (_departamento == null)
-  //                  _departamento = Departamento.DAO.Obter(idDepartamento);
+            get
+            {
+                //                if (_departamento == null)
+                //                  _departamento = Departamento.DAO.Obter(idDepartamento);
 
-    //            return _departamento;
+                //            return _departamento;
 
-                return idDepartamento; }
+                return idDepartamento;
+            }
             set { idDepartamento = value; }
         }
 

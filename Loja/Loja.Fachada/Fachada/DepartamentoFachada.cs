@@ -31,7 +31,7 @@ namespace Loja.Fachada.Fachada
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public static int Insert(string nomeDepartamento, string siglaDepartamento, double percDepartamento)
         {
-            Loja.Objeto.Models.Departamento departamento = Loja.Objeto.Models.Departamento.getInstance;
+            Loja.Objeto.Models.Departamento departamento = new Objeto.Models.Departamento();
             departamento.NomeDepartamento = nomeDepartamento;
             departamento.SiglaDepartamento = siglaDepartamento;
             departamento.ComissaoDepartamento = percDepartamento;

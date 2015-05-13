@@ -56,7 +56,7 @@ namespace Loja.Objeto.DAO
             comando.CommandText = "Select * from Departamento where idDepartamento = @idDepartamento";
             comando.Parameters.AddWithValue("@idDepartamento", idDepartamento);
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
-            Departamento departamento = Departamento.getInstance;
+            Departamento departamento = new Departamento();
             int departamentoId = dr.GetOrdinal("idDepartamento");
             int nomeDepartamento = dr.GetOrdinal("Nome_Departamento");
             int siglaDepartamento = dr.GetOrdinal("Sigla_Departamento");
@@ -81,7 +81,7 @@ namespace Loja.Objeto.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select * from Departamentos";
+            comando.CommandText = "Select * from Departamento";
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
             List<Departamento> listaDepartamentos = new List<Departamento>();
             
@@ -89,15 +89,15 @@ namespace Loja.Objeto.DAO
             {
                 int idDepartamento = dr.GetOrdinal("idDepartamento");
                 int nomeDepartamento = dr.GetOrdinal("Nome_Departamento");
-                int siglaDepartamento = dr.GetOrdinal("Sigla_Departamento");
-                int percDepartamento = dr.GetOrdinal("Comissao_Departamento");
+                
+              
                 while (dr.Read())
                 {
-                    Departamento departamento = Departamento.getInstance;
+                    Departamento departamento = new Departamento();
                     departamento.IdDepartamento = dr.GetInt32(idDepartamento);
                     departamento.NomeDepartamento = dr.GetString(nomeDepartamento);
-                    departamento.SiglaDepartamento = dr.GetString(siglaDepartamento);
-                    departamento.ComissaoDepartamento = dr.GetDouble(percDepartamento);
+                    
+                    
                     listaDepartamentos.Add(departamento);
                 }
             }
