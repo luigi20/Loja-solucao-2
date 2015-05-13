@@ -110,7 +110,7 @@
                                         Preco do Produto</label>
                                     <div class="controls">
                                         <asp:TextBox class="form-control" ID="txtBoxPreco" runat="server" Width="765px"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="rfvSigla" ControlToValidate="txtBoxSigla" runat="server" 
+                                        <asp:RequiredFieldValidator ID="rfvPreco" ControlToValidate="txtBoxPreco" runat="server" 
                                             ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@
                                         Quantidade do Produto</label>
                                     <div class="controls">
                                         <asp:TextBox class="form-control" ID="txtBoxQuantidade" runat="server" Width="765px"></asp:TextBox>
-                                       <asp:RequiredFieldValidator ID="rfvComissao" ControlToValidate="txtBoxComissao" runat="server" 
+                                       <asp:RequiredFieldValidator ID="rfvQuantidade" ControlToValidate="txtBoxQuantidade" runat="server" 
                                             ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                          <br />
                                     </div>
@@ -137,7 +137,7 @@
                                     </label>
                                     <div class="controls">
 
-                                        <asp:Button class="btn btn-success" ID="btnCadastrar" Text="Cadastrar"  runat="server" OnCommand="btnCadastrar_Command"    />
+                                        <asp:Button class="btn btn-success" ID="btnCadastrar" Text="Cadastrar" CommandName ="New"  runat="server" OnCommand="btnCadastrar_Command"    />
                                         <asp:Button class="btn btn-primary" ID="btnAlterar" runat="server" Text="Alterar" />
                                         <asp:Button class="btn btn-danger" ID="btnExcluir" runat="server" Text="Excluir" />
                                       

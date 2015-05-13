@@ -19,11 +19,11 @@ namespace Loja.Objeto.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Insert into Departamento(Nome_Departamento,Sigla_Departamento,Comissao_Departamento) "
-                                   + "values(@nomeDepartamento,@siglaDepartamento,@comissaoDepartamento)";
+            comando.CommandText = "Insert into Departamento(Nome_Departamento,Sigla_Departamento,Perc_Departamento) "
+                                   + "values(@nomeDepartamento,@siglaDepartamento,@percComissaoDepartamento)";
             comando.Parameters.AddWithValue("@nomeDepartamento", departamento.NomeDepartamento);
             comando.Parameters.AddWithValue("@siglaDepartamento", departamento.SiglaDepartamento);
-            comando.Parameters.AddWithValue("@comissaoDepartamento", departamento.ComissaoDepartamento);
+            comando.Parameters.AddWithValue("@percComissaoDepartamento", departamento.PercComissaoDepartamento);
             ConexãoBanco.CRUD(comando);
         }
 
@@ -32,11 +32,11 @@ namespace Loja.Objeto.DAO
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "Update Departamento set Nome_Departamento = @nomeDepartamento," +
-                                  "Sigla_Departamento = @siglaDepartamento,Comissao_Departamento = @comissaoDepartamento"+
+                                  "Sigla_Departamento = @siglaDepartamento,Perc_Departamento = @percComissaoDepartamento"+
                                   "where idDepartamento = @idDepartamento";
             comando.Parameters.AddWithValue("@nomeDepartamento", departamento.NomeDepartamento);
             comando.Parameters.AddWithValue("@siglaDepartamento", departamento.SiglaDepartamento);
-            comando.Parameters.AddWithValue("@comissaoDepartamento", departamento.ComissaoDepartamento);
+            comando.Parameters.AddWithValue("@percComissaoDepartamento", departamento.PercComissaoDepartamento);
             ConexãoBanco.CRUD(comando);                   
         }
 
@@ -60,14 +60,14 @@ namespace Loja.Objeto.DAO
             int departamentoId = dr.GetOrdinal("idDepartamento");
             int nomeDepartamento = dr.GetOrdinal("Nome_Departamento");
             int siglaDepartamento = dr.GetOrdinal("Sigla_Departamento");
-            int percDepartamento = dr.GetOrdinal("Comissao_Departamento");
+            int percDepartamento = dr.GetOrdinal("Perc_Departamento");
             if (dr.HasRows)
             {
                 dr.Read();
                 departamento.IdDepartamento = dr.GetInt32(idDepartamento);
                 departamento.NomeDepartamento = dr.GetString(nomeDepartamento);
                 departamento.SiglaDepartamento = dr.GetString(siglaDepartamento);
-                departamento.ComissaoDepartamento = dr.GetDouble(percDepartamento);
+                departamento.PercComissaoDepartamento = dr.GetDouble(percDepartamento);
                 //preenche o objeto
             }
             else

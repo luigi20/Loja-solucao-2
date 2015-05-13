@@ -11,7 +11,7 @@ namespace Loja.Interface.Views.Produto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ddlDepartamento.SelectedIndex = -1;
+
         }
 
         protected void btnCadastrar_Command(object sender, CommandEventArgs e)
@@ -20,10 +20,10 @@ namespace Loja.Interface.Views.Produto
             {
 
 
-                int inserir = Loja.Fachada.Fachada.ProdutoFachada.Insert(txtBoxNome.Text,
+                int inserir = Loja.Fachada.Fachada.ProdutoFachada.Insert(Convert.ToInt32(ddlDepartamento.SelectedValue),
+                                                                         txtBoxNome.Text,
                                                                          Convert.ToDouble(txtBoxPreco.Text),
-                                                                         Convert.ToInt32(txtBoxQuantidade.Text),
-                                                                         Convert.ToInt32(ddlDepartamento.DataTextField));
+                                                                         Convert.ToInt32(txtBoxQuantidade.Text));
 
                 if (inserir == 1)
                 {
@@ -33,7 +33,7 @@ namespace Loja.Interface.Views.Produto
                     txtBoxNome.Text = "";
                     txtBoxQuantidade.Text = "";
                     ddlDepartamento.SelectedIndex = -1;
-                    this.ExibirMensagem("Departamento Inserido Com Sucesso");
+                    this.ExibirMensagem("Produto Inserido Com Sucesso");
                     return;
                 }
             }

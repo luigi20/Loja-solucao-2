@@ -49,13 +49,13 @@ namespace Loja.Interface.Views.Produto {
         protected global::System.Web.UI.WebControls.TextBox txtBoxPreco;
         
         /// <summary>
-        /// Controle rfvSigla.
+        /// Controle rfvPreco.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSigla;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPreco;
         
         /// <summary>
         /// Controle txtBoxQuantidade.
@@ -67,13 +67,13 @@ namespace Loja.Interface.Views.Produto {
         protected global::System.Web.UI.WebControls.TextBox txtBoxQuantidade;
         
         /// <summary>
-        /// Controle rfvComissao.
+        /// Controle rfvQuantidade.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvComissao;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvQuantidade;
         
         /// <summary>
         /// Controle ddlDepartamento.
