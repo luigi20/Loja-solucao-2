@@ -161,6 +161,7 @@
     <Content Include="Views\Departamento\Departamento.aspx" />
     <Content Include="Views\Home\Home.aspx" />
     <Content Include="Views\Produto\Produto.aspx" />
+    <Content Include="Views\Vendedor\Vendedor.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -191,12 +192,18 @@
     <Compile Include="Views\Produto\Produto.aspx.designer.cs">
       <DependentUpon>Produto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Vendedor\Vendedor.aspx.cs">
+      <DependentUpon>Vendedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Vendedor\Vendedor.aspx.designer.cs">
+      <DependentUpon>Vendedor.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\ProdutoSimilar\" />
     <Folder Include="Views\RegistroVendaProduto\" />
     <Folder Include="Views\RegistroVenda\" />
-    <Folder Include="Views\Vendedor\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">

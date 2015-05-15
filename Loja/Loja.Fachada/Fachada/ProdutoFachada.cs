@@ -29,14 +29,15 @@ namespace Loja.Fachada.Fachada
 
         }
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public static int Insert( int departamentoIdProduto, string nomeProduto,double precoProduto,int quantidadeProduto)
+        public static int Insert(int departamentoIdProduto, string nomeProduto, double precoProduto, int quantidadeProduto,int idProdutoSimilar)
         {
             Loja.Objeto.Models.Produto produto = new Objeto.Models.Produto();
-           
+
             produto.DepartamentoProduto = departamentoIdProduto;
             produto.NomeProduto = nomeProduto;
             produto.PrecoProduto = precoProduto;
             produto.QuantidadeProduto = quantidadeProduto;
+            produto.IdProdutoSimilar = idProdutoSimilar;
             int inserir = produtoNg.Insert2(produto);
             return inserir;
         }

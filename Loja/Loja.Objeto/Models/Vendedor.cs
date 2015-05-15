@@ -15,9 +15,10 @@ namespace Loja.Objeto.Models
         private string cpfVendedor;
         private DateTime dataAdmissaoVendedor;
         private string situacaoVendedor;
+        private string nivelEscolaridade;
 
         public Vendedor(int idVendedor, int departamentoVendedor, int chefeDepartamentoVendedor, string nomeVendedor,
-                        string rgVendedor, string cpfVendedor, DateTime dataAdmissaoVendedor,string situacaoVendedor)
+                        string rgVendedor, string cpfVendedor, DateTime dataAdmissaoVendedor,string situacaoVendedor,string nivelEscolaridade)
         {
             this.idVendedor = idVendedor;
             this.departamentoVendedor = departamentoVendedor;
@@ -27,12 +28,21 @@ namespace Loja.Objeto.Models
             this.cpfVendedor = cpfVendedor;
             this.dataAdmissaoVendedor = dataAdmissaoVendedor;
             this.situacaoVendedor = situacaoVendedor;
+            this.nivelEscolaridade = nivelEscolaridade;
         }
+
         public string SituacaoVendedor
         {
             get { return situacaoVendedor; }
             set { situacaoVendedor = value; }
         }
+
+        public string NivelEscolaridade
+        {
+            get { return nivelEscolaridade; }
+            set { nivelEscolaridade = value; }
+        }
+
         public int IdVendedor
         {
             get { return idVendedor; }

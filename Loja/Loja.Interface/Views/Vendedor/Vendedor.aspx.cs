@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Loja.Interface.Views.Produto
+namespace Loja.Interface.Views.Vendedor
 {
-    public partial class Produto : System.Web.UI.Page
+    public partial class Vendedor : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +20,7 @@ namespace Loja.Interface.Views.Produto
             {
 
 
-                int inserir = Loja.Fachada.Fachada.ProdutoFachada.Insert(Convert.ToInt32(ddlDepartamento.SelectedValue),
+                int inserir = Loja.Fachada.Fachada.VendedorFachada.Insert(Convert.ToInt32(ddlDepartamento.SelectedValue),
                                                                          txtBoxNome.Text,
                                                                          Convert.ToDouble(txtBoxPreco.Text),
                                                                          Convert.ToInt32(txtBoxQuantidade.Text),
@@ -38,12 +38,6 @@ namespace Loja.Interface.Views.Produto
                     return;
                 }
             }
-        }
-
-        protected void ExibirMensagem(string mensagem)
-        {
-            ClientScript.RegisterStartupScript(System.Type.GetType("System.String"), "Alert",
-               "<script language='javascript'> { window.alert(\"" + mensagem + "\") }</script>");
         }
 
         protected void btnCadastrar_Click(object sender, EventArgs e)

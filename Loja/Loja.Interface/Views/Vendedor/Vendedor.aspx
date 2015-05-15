@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Produto.aspx.cs" Inherits="Loja.Interface.Views.Produto.Produto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Vendedor.aspx.cs" Inherits="Loja.Interface.Views.Vendedor.Vendedor" %>
 
 <!DOCTYPE html>
 
@@ -92,13 +92,13 @@
                                 <div class="panel-heading">
                                     <div class="panel-title">
                                         <i class="glyphicon glyphicon-wrench pull-right"></i>
-                                        <h4 id="head_pagina">Produtos</h4>
+                                        <h4 id="head_pagina">Vendedores</h4>
                                     </div>
                                 </div>
                                 <div class="panel-body">
                                     <div class="control-group col-md-10">
                                         <label>
-                                            Nome do Produto</label>
+                                            Nome do Vendedor</label>
                                         <div class="controls">
                                             <asp:TextBox class="form-control" ID="txtBoxNome" runat="server" Width="765px"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="rfvNome" ControlToValidate="txtBoxNome" runat="server"
@@ -107,26 +107,36 @@
                                     </div>
                                     <div class="control-group col-md-6">
                                         <label>
-                                            Preco do Produto</label>
+                                            ID do Chefe do Vendedor</label>
                                         <div class="controls">
-                                            <asp:TextBox class="form-control" ID="txtBoxPreco" runat="server" Width="765px"></asp:TextBox>
+                                            <asp:TextBox class="form-control" ID="txtBoxIsChefe" runat="server" Width="765px"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="rfvPreco" ControlToValidate="txtBoxPreco" runat="server"
                                                 ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="control-group col-md-12">
                                         <label>
-                                            Quantidade do Produto</label>
+                                            RG do Vendedor</label>
                                         <div class="controls">
-                                            <asp:TextBox class="form-control" ID="txtBoxQuantidade" runat="server" Width="765px"></asp:TextBox>
+                                            <asp:TextBox class="form-control" ID="txtBoxRG" runat="server" Width="765px"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="rfvQuantidade" ControlToValidate="txtBoxQuantidade" runat="server"
+                                                ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <br />
+                                        </div>
+                                    </div>
+                                    <div class="control-group col-md-12">
+                                        <label>
+                                            CPF do Vendedor</label>
+                                        <div class="controls">
+                                            <asp:TextBox class="form-control" ID="txtBoxCPF" runat="server" Width="765px"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtBoxQuantidade" runat="server"
                                                 ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                             <br />
                                         </div>
                                     </div>
                                     <div class="control-group col-md-4">
                                         <label>
-                                            Departamento do Produto</label>
+                                            Departamento do Vendedor</label>
                                         <div class="controls">
                                             <asp:DropDownList ID="ddlDepartamento" runat="server" DataSourceID="DepartamentoODS" DataTextField="NomeDepartamento" DataValueField="IdDepartamento">
                                             </asp:DropDownList>
@@ -134,10 +144,24 @@
                                     </div>
                                     <div class="control-group col-md-4">
                                         <label>
-                                            Produto Similar</label>
+                                            Nivel de Escolaridade</label>
                                         <div class="controls">
-                                            <asp:DropDownList ID="ddlProdutoSimilar" runat="server" DataSourceID="ProdutoODS" DataTextField="NomeProduto" DataValueField="IdProduto" AppendDataBoundItems="true">
-                                                <asp:ListItem Selected="True" Text="" Value="0"></asp:ListItem>
+                                            <asp:DropDownList ID="ddlProdutoSimilar" runat="server" >
+                                                <asp:ListItem Selected="True" Text="Ensino Medio Incompleto" Value="1"></asp:ListItem>
+                                                <asp:ListItem Value="2">Ensino Medio Completo</asp:ListItem>
+                                                <asp:ListItem Value="3">Ensino Superior Incompleto</asp:ListItem>
+                                                <asp:ListItem Value="4">Ensino Superior Completo</asp:ListItem>
+                                            </asp:DropDownList>
+                                        </div>
+                                    </div>
+                                     <div class="control-group col-md-4">
+                                        <label>
+                                            Situacao do Vendedor</label>
+                                        <div class="controls">
+                                            <asp:DropDownList ID="ddlSituacao" runat="server" >
+                                                <asp:ListItem>Ativo</asp:ListItem>
+                                                <asp:ListItem>Inativo</asp:ListItem>
+                                               
                                             </asp:DropDownList>
                                         </div>
                                     </div>
@@ -149,8 +173,6 @@
                                             <asp:Button class="btn btn-success" ID="btnCadastrar" Text="Cadastrar" CommandName="New" runat="server" OnCommand="btnCadastrar_Command" OnClick="btnCadastrar_Click" />
                                             <asp:Button class="btn btn-primary" ID="btnAlterar" runat="server" Text="Alterar" />
                                             <asp:Button class="btn btn-danger" ID="btnExcluir" runat="server" Text="Excluir" />
-
-                                            <asp:ObjectDataSource ID="ProdutoODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listarProduto" TypeName="Loja.Fachada.Fachada.ProdutoFachada"></asp:ObjectDataSource>
 
                                         </div>
                                     </div>
@@ -169,7 +191,6 @@
             </div>
         </div>
     </form>
-
 
 </body>
 </html>

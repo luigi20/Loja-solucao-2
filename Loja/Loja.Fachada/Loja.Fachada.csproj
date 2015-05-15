@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Fachada\DepartamentoFachada.cs" />
     <Compile Include="Fachada\ProdutoFachada.cs" />
+    <Compile Include="Fachada\VendedorFachada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

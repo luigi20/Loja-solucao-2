@@ -7,10 +7,10 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Loja.Interface.Views.Produto {
+namespace Loja.Interface.Views.Vendedor {
     
     
-    public partial class Produto {
+    public partial class Vendedor {
         
         /// <summary>
         /// Controle form1.
@@ -40,13 +40,13 @@ namespace Loja.Interface.Views.Produto {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNome;
         
         /// <summary>
-        /// Controle txtBoxPreco.
+        /// Controle txtBoxIsChefe.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBoxPreco;
+        protected global::System.Web.UI.WebControls.TextBox txtBoxIsChefe;
         
         /// <summary>
         /// Controle rfvPreco.
@@ -58,13 +58,13 @@ namespace Loja.Interface.Views.Produto {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPreco;
         
         /// <summary>
-        /// Controle txtBoxQuantidade.
+        /// Controle txtBoxRG.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBoxQuantidade;
+        protected global::System.Web.UI.WebControls.TextBox txtBoxRG;
         
         /// <summary>
         /// Controle rfvQuantidade.
@@ -74,6 +74,24 @@ namespace Loja.Interface.Views.Produto {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvQuantidade;
+        
+        /// <summary>
+        /// Controle txtBoxCPF.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBoxCPF;
+        
+        /// <summary>
+        /// Controle RequiredFieldValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// Controle ddlDepartamento.
@@ -92,6 +110,15 @@ namespace Loja.Interface.Views.Produto {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlProdutoSimilar;
+        
+        /// <summary>
+        /// Controle ddlSituacao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSituacao;
         
         /// <summary>
         /// Controle btnCadastrar.
@@ -119,15 +146,6 @@ namespace Loja.Interface.Views.Produto {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnExcluir;
-        
-        /// <summary>
-        /// Controle ProdutoODS.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ProdutoODS;
         
         /// <summary>
         /// Controle DepartamentoODS.

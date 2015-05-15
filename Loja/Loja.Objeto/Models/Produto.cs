@@ -13,19 +13,20 @@ namespace Loja.Objeto.Models
         private string nomeProduto;
         private double precoProduto;
         private int quantidadeProduto;
+        private int idProdutoSimilar;
 
         public Produto()
         {
 
         }
-        public  Produto (int idProduto, int departamentoProduto,string nomeProduto,double precoProduto,int quantidadeProduto )
+        public  Produto (int idProduto, int departamentoProduto,string nomeProduto,double precoProduto,int quantidadeProduto,int idProdutoSimilar )
         {
             this.idProduto = idProduto;
             this.nomeProduto = nomeProduto;
             this.precoProduto = precoProduto;
             this.quantidadeProduto = quantidadeProduto;
             this.departamentoProduto = departamentoProduto;
-
+            this.idProdutoSimilar = idProdutoSimilar;
         }
 
         public int IdProduto
@@ -57,6 +58,12 @@ namespace Loja.Objeto.Models
         {
             get { return quantidadeProduto; }
             set { quantidadeProduto = value; }
+        }
+
+        public int IdProdutoSimilar
+        {
+            get { return idProdutoSimilar; }
+            set { idProdutoSimilar = value; }
         }
     }
 }

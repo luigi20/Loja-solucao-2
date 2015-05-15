@@ -17,7 +17,7 @@ namespace Loja.Objeto.BO
             if (produto.IdProduto != 0)
             {
                 //altera
-                
+
                 ProdutoDAO.Update(produto);
             }
             else

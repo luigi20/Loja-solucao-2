@@ -47,7 +47,6 @@
     <Compile Include="DAO\ProdutoDAO.cs" />
     <Compile Include="Models\Departamento.cs" />
     <Compile Include="Models\Produto.cs" />
-    <Compile Include="Models\ProdutoSimilar.cs" />
     <Compile Include="Models\RegistroVenda.cs" />
     <Compile Include="Models\RegistroVendaProduto.cs" />
     <Compile Include="Models\Venda.cs" />
