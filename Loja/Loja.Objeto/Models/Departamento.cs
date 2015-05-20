@@ -13,18 +13,19 @@ namespace Loja.Objeto.Models
         private string siglaDepartamento;
         private double percComissaoDepartamento;
         private List<Produto> listaProdutoDepartamento;
-        
+        private int chefeDepartamentoVendedor;
         public Departamento()
         {
 
         }
 
-        public Departamento(int idDepartamento,string nomeDepartamento,string siglaDepartamento,double percComissaoDepartamento)
+        public Departamento(int idDepartamento,string nomeDepartamento,string siglaDepartamento,double percComissaoDepartamento,int chefeDepartamentoVendedor)
         {
             this.idDepartamento = idDepartamento;
             this.nomeDepartamento = nomeDepartamento;
             this.siglaDepartamento = siglaDepartamento;
             this.percComissaoDepartamento = percComissaoDepartamento;
+            this.chefeDepartamentoVendedor = chefeDepartamentoVendedor;
             this.listaProdutoDepartamento = new List<Produto>();
         }
         public int IdDepartamento
@@ -33,6 +34,11 @@ namespace Loja.Objeto.Models
             set { idDepartamento = value; }
         }
 
+        public int ChefeDepartamentoVendedor
+        {
+            get { return chefeDepartamentoVendedor; }
+            set { chefeDepartamentoVendedor = value; }
+        }
         public string NomeDepartamento
         {
             get { return nomeDepartamento; }

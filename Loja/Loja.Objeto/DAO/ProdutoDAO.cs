@@ -68,7 +68,7 @@ namespace Loja.Objeto.DAO
             if (dr.HasRows)
             {
                 dr.Read();
-                produto.IdProduto = dr.GetInt32(idProduto);
+                produto.IdProduto = dr.GetInt32(produtoId);
                 produto.DepartamentoProduto = dr.GetInt32(departamentoId);
                 produto.NomeProduto = dr.GetString(nomeProduto);
                 produto.PrecoProduto = dr.GetDouble(precoProduto);

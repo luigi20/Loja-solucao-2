@@ -76,6 +76,15 @@ namespace Loja.Interface.Views.Departamento {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvComissao;
         
         /// <summary>
+        /// Controle ddlIdChefe.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlIdChefe;
+        
+        /// <summary>
         /// Controle btnCadastrar.
         /// </summary>
         /// <remarks>
@@ -101,5 +110,14 @@ namespace Loja.Interface.Views.Departamento {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnExcluir;
+        
+        /// <summary>
+        /// Controle VendedorODS.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource VendedorODS;
     }
 }

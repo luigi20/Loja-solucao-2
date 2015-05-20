@@ -50,11 +50,10 @@
                             <ul class="list-unstyled collapse in" id="userMenu">
 
                                 <li><a href="../Departamento/Departamento.aspx">Departamento</a></li>
-                                <li><a href="Produto.aspx">Produto</a></li>
-                                <li><a href="">Produto Similar </a></li>
+                                <li><a href="../Produto/Produto.aspx">Produto</a></li>
                                 <li><a href="">Venda</a></li>
                                 <li><a href="">Registro de Venda</a></li>
-                                <li><a href="">Vendedor</a></li>
+                                <li><a href="Vendedor.aspx">Vendedor</a></li>
                             </ul>
                         </li>
                         <hr />
@@ -105,21 +104,23 @@
                                                 ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
-                                    <div class="control-group col-md-6">
-                                        <label>
-                                            ID do Chefe do Vendedor</label>
-                                        <div class="controls">
-                                            <asp:TextBox class="form-control" ID="txtBoxIsChefe" runat="server" Width="765px"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="rfvPreco" ControlToValidate="txtBoxPreco" runat="server"
-                                                ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
+                                   
                                     <div class="control-group col-md-12">
                                         <label>
                                             RG do Vendedor</label>
                                         <div class="controls">
                                             <asp:TextBox class="form-control" ID="txtBoxRG" runat="server" Width="765px"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="rfvQuantidade" ControlToValidate="txtBoxQuantidade" runat="server"
+                                            <asp:RequiredFieldValidator ID="rfvRG" ControlToValidate="txtBoxRG" runat="server"
+                                                ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <br />
+                                        </div>
+                                    </div>
+                                    <div class="control-group col-md-12">
+                                        <label>
+                                            Data de Admissao do Vendedor</label>
+                                        <div class="controls">
+                                            <asp:TextBox class="form-control" ID="txtBoxData" runat="server" Width="765px"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="rfvData" ControlToValidate="txtBoxData" runat="server"
                                                 ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                             <br />
                                         </div>
@@ -129,7 +130,7 @@
                                             CPF do Vendedor</label>
                                         <div class="controls">
                                             <asp:TextBox class="form-control" ID="txtBoxCPF" runat="server" Width="765px"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtBoxQuantidade" runat="server"
+                                            <asp:RequiredFieldValidator ID="rfvCPF" ControlToValidate="txtBoxCPF" runat="server"
                                                 ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                             <br />
                                         </div>
@@ -146,11 +147,10 @@
                                         <label>
                                             Nivel de Escolaridade</label>
                                         <div class="controls">
-                                            <asp:DropDownList ID="ddlProdutoSimilar" runat="server" >
-                                                <asp:ListItem Selected="True" Text="Ensino Medio Incompleto" Value="1"></asp:ListItem>
-                                                <asp:ListItem Value="2">Ensino Medio Completo</asp:ListItem>
-                                                <asp:ListItem Value="3">Ensino Superior Incompleto</asp:ListItem>
-                                                <asp:ListItem Value="4">Ensino Superior Completo</asp:ListItem>
+                                            <asp:DropDownList ID="ddlNivelEscolaridade" runat="server" >
+                                                <asp:ListItem Selected="True" Text="Ensino Fundamental " Value="Ensino Fundamental "></asp:ListItem>
+                                                <asp:ListItem Text="Ensino Medio " Value="Ensino Medio ">Ensino Medio </asp:ListItem>
+                                                <asp:ListItem Text="Ensino Superior " Value="Ensino Superior ">Ensino Superior </asp:ListItem>
                                             </asp:DropDownList>
                                         </div>
                                     </div>

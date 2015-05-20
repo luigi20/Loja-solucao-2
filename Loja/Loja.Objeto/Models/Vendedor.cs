@@ -9,20 +9,24 @@ namespace Loja.Objeto.Models
     {
         private int idVendedor;
         private int departamentoVendedor;
-        private int chefeDepartamentoVendedor;
         private string nomeVendedor;
-        private string rgVendedor;
+        private int rgVendedor;
         private string cpfVendedor;
         private DateTime dataAdmissaoVendedor;
         private string situacaoVendedor;
         private string nivelEscolaridade;
 
-        public Vendedor(int idVendedor, int departamentoVendedor, int chefeDepartamentoVendedor, string nomeVendedor,
-                        string rgVendedor, string cpfVendedor, DateTime dataAdmissaoVendedor,string situacaoVendedor,string nivelEscolaridade)
+        public Vendedor()
+        {
+
+        }
+
+        public Vendedor(int idVendedor, int departamentoVendedor,  string nomeVendedor,
+                        int rgVendedor, string cpfVendedor, DateTime dataAdmissaoVendedor,string situacaoVendedor,string nivelEscolaridade)
         {
             this.idVendedor = idVendedor;
             this.departamentoVendedor = departamentoVendedor;
-            this.chefeDepartamentoVendedor = chefeDepartamentoVendedor;
+        
             this.nomeVendedor = nomeVendedor;
             this.rgVendedor = rgVendedor;
             this.cpfVendedor = cpfVendedor;
@@ -55,11 +59,7 @@ namespace Loja.Objeto.Models
             set { departamentoVendedor = value; }
         }
 
-        public int ChefeDepartamentoVendedor
-        {
-            get { return chefeDepartamentoVendedor; }
-            set { chefeDepartamentoVendedor = value; }
-        }
+       
 
         public string NomeVendedor
         {
@@ -67,7 +67,7 @@ namespace Loja.Objeto.Models
             set { nomeVendedor = value; }
         }
 
-        public string RgVendedor
+        public int RgVendedor
         {
             get { return rgVendedor; }
             set { rgVendedor = value; }

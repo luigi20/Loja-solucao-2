@@ -43,6 +43,7 @@
     <Compile Include="DepartamentoNg.cs" />
     <Compile Include="ProdutoNg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VendedorNg.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Loja.Objeto\Loja.Objeto.csproj">

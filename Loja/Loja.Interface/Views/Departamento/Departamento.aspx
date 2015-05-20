@@ -51,10 +51,9 @@
                             
                             <li><a href="Departamento.aspx">Departamento</a></li>
                             <li><a href="../Produto/Produto.aspx">Produto</a></li>
-                            <li><a href="">Produto Similar </a></li>
                             <li><a href="">Venda</a></li>
                             <li><a href="">Registro de Venda</a></li>
-                            <li><a href="">Vendedor</a></li>
+                            <li><a href="../Vendedor/Vendedor.aspx">Vendedor</a></li>
                         </ul>
                     </li>
                     <hr />
@@ -124,14 +123,25 @@
                                          <br />
                                     </div>
                                 </div>
+                                 <div class="control-group col-md-6">
+                                        <label>&nbsp;Chefe do Departamento</label>
+                                        <div class="controls">
+                                            <asp:DropDownList ID="ddlIdChefe" runat="server" DataSourceID="VendedorODS" DataTextField="NomeVendedor" DataValueField="IdVendedor" AppendDataBoundItems ="True">
+                                                <asp:ListItem Selected="True" Value ="-1" Text=" " ></asp:ListItem>
+                                            </asp:DropDownList>
+                                           
+                                        </div>
+                                    </div>
                                 <div class="control-group col-md-12">
                                     <label>
                                     </label>
                                     <div class="controls">
 
-                                        <asp:Button class="btn btn-success" ID="btnCadastrar" Text="Cadastrar" CommandName="New" runat="server"  OnCommand="btnCadastrar_Command"   />
+                                        <asp:Button class="btn btn-success" ID="btnCadastrar" Text="Cadastrar" CommandName="New" runat="server"  OnCommand="btnCadastrar_Command" OnClick="btnCadastrar_Click"   />
                                         <asp:Button class="btn btn-primary" ID="btnAlterar" runat="server" Text="Alterar" />
                                         <asp:Button class="btn btn-danger" ID="btnExcluir" runat="server" Text="Excluir" />
+                                      
+                        <asp:ObjectDataSource ID="VendedorODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listarPossiveisChefes" TypeName="Loja.Fachada.Fachada.VendedorFachada"></asp:ObjectDataSource>
                                       
                                     </div>
                                 </div>
@@ -148,6 +158,7 @@
             <!--/col-span-9-->
         </div>
     </div>
+    </form>
     <!-- /Main -->
     <footer class="text-center">Páginas relacionadas à atividade de -9-->
         </div>

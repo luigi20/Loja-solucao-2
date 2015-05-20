@@ -11,7 +11,7 @@ namespace Loja.Interface.Views.Vendedor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnCadastrar_Command(object sender, CommandEventArgs e)
@@ -20,21 +20,24 @@ namespace Loja.Interface.Views.Vendedor
             {
 
 
-                int inserir = Loja.Fachada.Fachada.VendedorFachada.Insert(Convert.ToInt32(ddlDepartamento.SelectedValue),
-                                                                         txtBoxNome.Text,
-                                                                         Convert.ToDouble(txtBoxPreco.Text),
-                                                                         Convert.ToInt32(txtBoxQuantidade.Text),
-                                                                         Convert.ToInt32(ddlProdutoSimilar.SelectedValue));
+                int inserir = Loja.Fachada.Fachada.VendedorFachada.Insert(txtBoxNome.Text,
+                                                                         txtBoxCPF.Text, Convert.ToInt32(txtBoxRG.Text), 
+                                                                         Convert.ToDateTime(txtBoxData.Text), 
+                                                                         Convert.ToInt32(ddlDepartamento.SelectedValue),
+                                                                         ddlNivelEscolaridade.Text, ddlSituacao.Text);
 
                 if (inserir == 1)
                 {
 
-
-                    txtBoxPreco.Text = "";
                     txtBoxNome.Text = "";
-                    txtBoxQuantidade.Text = "";
+                    txtBoxCPF.Text = "";
+                    txtBoxData.Text = "";
+                    txtBoxRG.Text = "";
                     ddlDepartamento.SelectedIndex = -1;
-                    this.ExibirMensagem("Produto Inserido Com Sucesso");
+                    ddlNivelEscolaridade.SelectedIndex = -1;
+                    ddlSituacao.SelectedIndex = -1;
+               
+                    this.ExibirMensagem("Vendedor Inserido Com Sucesso");
                     return;
                 }
             }
@@ -44,5 +47,12 @@ namespace Loja.Interface.Views.Vendedor
         {
 
         }
+
+        protected void ExibirMensagem(string mensagem)
+        {
+            ClientScript.RegisterStartupScript(System.Type.GetType("System.String"), "Alert",
+               "<script language='javascript'> { window.alert(\"" + mensagem + "\") }</script>");
+        }
+
     }
 }

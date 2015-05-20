@@ -51,10 +51,9 @@
 
                                 <li><a href="../Departamento/Departamento.aspx">Departamento</a></li>
                                 <li><a href="Produto.aspx">Produto</a></li>
-                                <li><a href="">Produto Similar </a></li>
                                 <li><a href="">Venda</a></li>
                                 <li><a href="">Registro de Venda</a></li>
-                                <li><a href="">Vendedor</a></li>
+                                <li><a href="../Vendedor/Vendedor.aspx">Vendedor</a></li>
                             </ul>
                         </li>
                         <hr />
@@ -137,7 +136,7 @@
                                             Produto Similar</label>
                                         <div class="controls">
                                             <asp:DropDownList ID="ddlProdutoSimilar" runat="server" DataSourceID="ProdutoODS" DataTextField="NomeProduto" DataValueField="IdProduto" AppendDataBoundItems="true">
-                                                <asp:ListItem Selected="True" Text="" Value="0"></asp:ListItem>
+                                                <asp:ListItem Selected="True" Text="" Value="-1"></asp:ListItem>
                                             </asp:DropDownList>
                                         </div>
                                     </div>

@@ -43,8 +43,10 @@
     <Compile Include="BO\ConexãoBanco.cs" />
     <Compile Include="BO\DepartamentoBO.cs" />
     <Compile Include="BO\ProdutoBO.cs" />
+    <Compile Include="BO\VendedorBO.cs" />
     <Compile Include="DAO\DepartamentoDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
+    <Compile Include="DAO\VendedorDAO.cs" />
     <Compile Include="Models\Departamento.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\RegistroVenda.cs" />

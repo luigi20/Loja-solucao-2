@@ -24,7 +24,7 @@ namespace Loja.Interface.Views.Departamento
                 
                 int inserir = Loja.Fachada.Fachada.DepartamentoFachada.Insert(txtBoxNome.Text, 
                                                                               txtBoxSigla.Text, 
-                                                                              Convert.ToDouble(txtBoxComissao.Text));
+                                                                              Convert.ToDouble(txtBoxComissao.Text),Convert.ToInt32(ddlIdChefe.SelectedValue));
 
                 if (inserir == 1){
 
@@ -41,6 +41,11 @@ namespace Loja.Interface.Views.Departamento
         {
             ClientScript.RegisterStartupScript(System.Type.GetType("System.String"), "Alert",
                "<script language='javascript'> { window.alert(\"" + mensagem + "\") }</script>");
+        }
+
+        protected void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
         }
        
     }

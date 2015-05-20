@@ -29,12 +29,13 @@ namespace Loja.Fachada.Fachada
 
         }
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public static int Insert(string nomeDepartamento, string siglaDepartamento, double percDepartamento)
+        public static int Insert(string nomeDepartamento, string siglaDepartamento, double percDepartamento,int idChefeDepartamento)
         {
             Loja.Objeto.Models.Departamento departamento = new Objeto.Models.Departamento();
             departamento.NomeDepartamento = nomeDepartamento;
             departamento.SiglaDepartamento = siglaDepartamento;
             departamento.PercComissaoDepartamento = percDepartamento;
+            departamento.ChefeDepartamentoVendedor = idChefeDepartamento;
             int inserir = departamentoNg.Insert2(departamento);
             return inserir;
         }
