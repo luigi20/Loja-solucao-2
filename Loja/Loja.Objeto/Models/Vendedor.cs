@@ -15,7 +15,7 @@ namespace Loja.Objeto.Models
         private DateTime dataAdmissaoVendedor;
         private string situacaoVendedor;
         private string nivelEscolaridade;
-
+        
         public Vendedor()
         {
 

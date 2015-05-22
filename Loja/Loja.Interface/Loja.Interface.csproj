@@ -160,6 +160,9 @@
     <Content Include="Global.asax" />
     <Content Include="Views\Departamento\Departamento.aspx" />
     <Content Include="Views\Home\Home.aspx" />
+    <Content Include="Views\Pesquisar\Departamento\Departamento.aspx" />
+    <Content Include="Views\Pesquisar\Produto\Produto.aspx" />
+    <Content Include="Views\Pesquisar\Vendedor\Vendedor.aspx" />
     <Content Include="Views\Produto\Produto.aspx" />
     <Content Include="Views\Vendedor\Vendedor.aspx" />
     <Content Include="Web.config" />
@@ -185,6 +188,27 @@
     <Compile Include="Views\Home\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pesquisar\Departamento\Departamento.aspx.cs">
+      <DependentUpon>Departamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pesquisar\Departamento\Departamento.aspx.designer.cs">
+      <DependentUpon>Departamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pesquisar\Produto\Produto.aspx.cs">
+      <DependentUpon>Produto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pesquisar\Produto\Produto.aspx.designer.cs">
+      <DependentUpon>Produto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pesquisar\Vendedor\Vendedor.aspx.cs">
+      <DependentUpon>Vendedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pesquisar\Vendedor\Vendedor.aspx.designer.cs">
+      <DependentUpon>Vendedor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Produto\Produto.aspx.cs">
       <DependentUpon>Produto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -201,7 +225,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\ProdutoSimilar\" />
     <Folder Include="Views\RegistroVendaProduto\" />
     <Folder Include="Views\RegistroVenda\" />
   </ItemGroup>

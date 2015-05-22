@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Loja.Objeto.DAO;
 
 namespace Loja.Objeto.Models
 {
     public class Departamento
     {
-        
+        private Vendedor vendedor;
         private int idDepartamento;
         private string nomeDepartamento;
         private string siglaDepartamento;
@@ -27,6 +28,19 @@ namespace Loja.Objeto.Models
             this.percComissaoDepartamento = percComissaoDepartamento;
             this.chefeDepartamentoVendedor = chefeDepartamentoVendedor;
             this.listaProdutoDepartamento = new List<Produto>();
+        }
+
+        public Vendedor Vendedor
+        {
+            get
+            {
+                if (this.vendedor == null)
+                {
+                    this.vendedor = VendedorDAO.BuscarPorId(chefeDepartamentoVendedor);
+                }
+
+                return vendedor;
+            }
         }
         public int IdDepartamento
         {

@@ -98,7 +98,7 @@
                                     <div class="control-group col-md-10">
                                         <label>
                                             Nome do Produto</label>
-                                        <div class="controls">
+                                        <div class="control-group col-md-2">
                                             <asp:TextBox class="form-control" ID="txtBoxNome" runat="server" Width="765px"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="rfvNome" ControlToValidate="txtBoxNome" runat="server"
                                                 ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>

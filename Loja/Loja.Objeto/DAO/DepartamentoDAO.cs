@@ -19,11 +19,14 @@ namespace Loja.Objeto.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Insert into Departamento(Nome_Departamento,Sigla_Departamento,Perc_Departamento) "
-                                   + "values(@nomeDepartamento,@siglaDepartamento,@percComissaoDepartamento)";
+            comando.CommandText = "Insert into Departamento(Nome_Departamento,Sigla_Departamento,Perc_Departamento,idChefeDepartamento) "
+                                   + "values(@nomeDepartamento,@siglaDepartamento,@percComissaoDepartamento,@idChefeDepartamento)";
+
             comando.Parameters.AddWithValue("@nomeDepartamento", departamento.NomeDepartamento);
             comando.Parameters.AddWithValue("@siglaDepartamento", departamento.SiglaDepartamento);
             comando.Parameters.AddWithValue("@percComissaoDepartamento", departamento.PercComissaoDepartamento);
+
+            comando.Parameters.AddWithValue("@idChefeDepartamento", departamento.ChefeDepartamentoVendedor);
             ConexãoBanco.CRUD(comando);
         }
 
@@ -81,7 +84,7 @@ namespace Loja.Objeto.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select * from Departamento";
+            comando.CommandText = "Select idDepartamento,Nome_Departamento,Sigla_Departamento, Perc_Departamento,idChefeDepartamento from Departamento";
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
             List<Departamento> listaDepartamentos = new List<Departamento>();
             
@@ -89,13 +92,18 @@ namespace Loja.Objeto.DAO
             {
                 int idDepartamento = dr.GetOrdinal("idDepartamento");
                 int nomeDepartamento = dr.GetOrdinal("Nome_Departamento");
-                
+                int siglaDepartamento = dr.GetOrdinal("Sigla_Departamento");
+                int percDepartamento = dr.GetOrdinal("Perc_Departamento");
+                int idChefeDepartamento = dr.GetOrdinal("idChefeDepartamento");
               
                 while (dr.Read())
                 {
                     Departamento departamento = new Departamento();
                     departamento.IdDepartamento = dr.GetInt32(idDepartamento);
                     departamento.NomeDepartamento = dr.GetString(nomeDepartamento);
+                    departamento.ChefeDepartamentoVendedor = dr.GetValue(idChefeDepartamento) == DBNull.Value ? -1 : dr.GetInt32(idChefeDepartamento);
+                    departamento.PercComissaoDepartamento = dr.GetFloat(percDepartamento);
+                    departamento.SiglaDepartamento = dr.GetString(siglaDepartamento);
                     
                     
                     listaDepartamentos.Add(departamento);
