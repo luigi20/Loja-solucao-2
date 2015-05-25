@@ -83,8 +83,7 @@
                     <ul class="list-inline pull-right">
                         <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
                     </ul>
-                    Produtos
-                <hr />
+                    &nbsp;<hr />
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
@@ -97,9 +96,9 @@
                                 <div class="panel-body">
                                     <div class="control-group col-md-10">
                                         <label>
-                                            Nome do Produto</label>
+                                            Nome do Produto</label></br>
                                         <div class="control-group col-md-2">
-                                            <asp:TextBox class="form-control" ID="txtBoxNome" runat="server" Width="765px"></asp:TextBox>
+                                            <asp:TextBox class="form-control" ID="txtBoxNome" runat="server" Width="749px"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="rfvNome" ControlToValidate="txtBoxNome" runat="server"
                                                 ErrorMessage="* Campo Obrigatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
@@ -136,7 +135,7 @@
                                             Produto Similar</label>
                                         <div class="controls">
                                             <asp:DropDownList ID="ddlProdutoSimilar" runat="server" DataSourceID="ProdutoODS" DataTextField="NomeProduto" DataValueField="IdProduto" AppendDataBoundItems="true">
-                                                <asp:ListItem Selected="True" Text="" Value="-1"></asp:ListItem>
+                                                <asp:ListItem Selected="True" Text="" ></asp:ListItem>
                                             </asp:DropDownList>
                                         </div>
                                     </div>

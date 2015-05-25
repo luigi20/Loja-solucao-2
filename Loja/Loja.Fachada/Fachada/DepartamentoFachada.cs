@@ -58,5 +58,12 @@ namespace Loja.Fachada.Fachada
             return departamentoNg.listarDepartamento();
 
         }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public static Loja.Objeto.Models.Departamento listarDepartamentoPorId(int id)
+        {
+            return departamentoNg.Obter(id);
+
+        }
     }
 }

@@ -101,8 +101,8 @@
                                     <div class="control-group col-md-2">
                                         Nome
                                         <br />
-                                        <asp:DropDownList ID="ddlDepartamento" runat="server" DataSourceID="ODSDepartamento" DataTextField="NomeDepartamento" DataValueField="IdDepartamento">
-                                         
+                                        <asp:DropDownList ID="ddlDepartamento" runat="server" DataSourceID="ODSDepartamento" AppendDataBoundItems ="true" DataTextField="NomeDepartamento" DataValueField="IdDepartamento">
+                                         <asp:ListItem Selected="True" Text="" Value="-1"></asp:ListItem>
                                         </asp:DropDownList>
                                         <br />
                                         <br />
@@ -118,7 +118,7 @@
                                     </label>
                                     <div class="controls">
                                         <br />
-                                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="IdDepartamento" DataSourceID="ODSDepartamento" CellPadding="4" ForeColor="#333333" GridLines="None" Width="717px">
+                                        <asp:GridView ID="gdvDepartamento" runat="server" AutoGenerateColumns="False" DataKeyNames="IdDepartamento" DataSourceID="ODSDepartamento" CellPadding="4" ForeColor="#333333" Width="717px">
                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                             <Columns>
                                                 <asp:BoundField DataField="IdDepartamento" HeaderText="Id" SortExpression="IdDepartamento" >
@@ -148,6 +148,15 @@
                                                 <HeaderStyle HorizontalAlign="Center" />
                                                 <ItemStyle HorizontalAlign="Center" />
                                                 </asp:BoundField>
+                                                 <asp:TemplateField HeaderText="Ações">
+                                                    <ItemTemplate>
+                                                        <asp:Button ID="btnAlterar" runat="server" OnClick="btnAlterar_Click" Text="Alterar"
+                                                            CausesValidation="false" />
+                                                        <asp:Button ID="btnExcluir" runat="server" OnClick="btnExcluir_Click" Text="Excluir"
+                                                            CausesValidation="false" />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
                                             </Columns>
                                             <EditRowStyle BackColor="#999999" />
                                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -160,6 +169,7 @@
                                             <SortedDescendingCellStyle BackColor="#FFFDF8" />
                                             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                                         </asp:GridView>
+                                        <asp:ObjectDataSource ID="ODSGridDepart" runat="server"></asp:ObjectDataSource>
                                     </div>
                                 </div>
                             </div>

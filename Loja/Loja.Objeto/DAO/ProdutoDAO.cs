@@ -71,7 +71,7 @@ namespace Loja.Objeto.DAO
                 produto.IdProduto = dr.GetInt32(produtoId);
                 produto.DepartamentoProduto = dr.GetInt32(departamentoId);
                 produto.NomeProduto = dr.GetString(nomeProduto);
-                produto.PrecoProduto = dr.GetDouble(precoProduto);
+                produto.PrecoProduto = dr.GetFloat(precoProduto);
                 produto.QuantidadeProduto = dr.GetInt32(quantidadeProduto);
 
                 //preenche o objeto
@@ -87,7 +87,7 @@ namespace Loja.Objeto.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select idProduto,Nome_Produto from Produto";
+            comando.CommandText = "Select idProduto,Nome_Produto,Departamento_idDepartamento,Preco_Produto,Quantidade_Produto,idProduto_Similar from Produto";
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
             List<Produto> listaProdutos = new List<Produto>();
 
@@ -95,15 +95,20 @@ namespace Loja.Objeto.DAO
             {
                 int idProduto = dr.GetOrdinal("idProduto");
                 int nomeProduto = dr.GetOrdinal("Nome_Produto");
-
+                int idDepartamento = dr.GetOrdinal("Departamento_idDepartamento");
+                int precoProduto = dr.GetOrdinal("Preco_Produto");
+                int idProdutoSimilar = dr.GetOrdinal("idProduto_Similar");
+                int quantidadeProduto = dr.GetOrdinal("Quantidade_Produto");
 
                 while (dr.Read())
                 {
                     Produto produto = new Produto();
                     produto.IdProduto = dr.GetInt32(idProduto);
+                    produto.DepartamentoProduto = dr.GetInt32(idDepartamento);
                     produto.NomeProduto = dr.GetString(nomeProduto);
-
-
+                    produto.PrecoProduto = dr.GetFloat(precoProduto);
+                    produto.QuantidadeProduto = dr.GetInt32(quantidadeProduto);
+                    produto.IdProdutoSimilar = dr.GetInt32(idProdutoSimilar);
                     listaProdutos.Add(produto);
                 }
             }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using Loja.Objeto.DAO;
 namespace Loja.Objeto.Models
 {
     public class Vendedor
@@ -15,7 +15,7 @@ namespace Loja.Objeto.Models
         private DateTime dataAdmissaoVendedor;
         private string situacaoVendedor;
         private string nivelEscolaridade;
-        
+        private Departamento departamento;
         public Vendedor()
         {
 
@@ -35,6 +35,18 @@ namespace Loja.Objeto.Models
             this.nivelEscolaridade = nivelEscolaridade;
         }
 
+        public Departamento Departamento
+        {
+            get
+            {
+                if (this.departamento== null)
+                {
+                    this.departamento = DepartamentoDAO.BuscarPorId(departamentoVendedor);
+                }
+
+                return departamento;
+            }
+        }
         public string SituacaoVendedor
         {
             get { return situacaoVendedor; }

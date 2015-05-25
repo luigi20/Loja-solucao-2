@@ -83,8 +83,8 @@
                 <ul class="list-inline pull-right">
                     <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
                 </ul>
-                <a href="#"><strong><i class="glyphicon glyphicon-dashboard">Departamentos</i></strong></a>
-                <hr />
+                <a href="#"><strong></strong></a>
+                &nbsp;<hr />
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">

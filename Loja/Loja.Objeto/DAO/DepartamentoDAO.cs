@@ -67,10 +67,10 @@ namespace Loja.Objeto.DAO
             if (dr.HasRows)
             {
                 dr.Read();
-                departamento.IdDepartamento = dr.GetInt32(idDepartamento);
+                departamento.IdDepartamento = dr.GetInt32(departamentoId);
                 departamento.NomeDepartamento = dr.GetString(nomeDepartamento);
                 departamento.SiglaDepartamento = dr.GetString(siglaDepartamento);
-                departamento.PercComissaoDepartamento = dr.GetDouble(percDepartamento);
+                departamento.PercComissaoDepartamento = dr.GetFloat(percDepartamento);
                 //preenche o objeto
             }
             else

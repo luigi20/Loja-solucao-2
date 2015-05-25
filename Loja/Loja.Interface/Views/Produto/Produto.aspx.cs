@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using Loja.Objeto.DAO;
 namespace Loja.Interface.Views.Produto
 {
     public partial class Produto : System.Web.UI.Page
@@ -19,12 +19,25 @@ namespace Loja.Interface.Views.Produto
             if (e.CommandName == "New")
             {
 
+                int inserir = 0;
+                if (ddlProdutoSimilar.Text == "")
+                {
 
-                int inserir = Loja.Fachada.Fachada.ProdutoFachada.Insert(Convert.ToInt32(ddlDepartamento.SelectedValue),
-                                                                         txtBoxNome.Text,
-                                                                         Convert.ToDouble(txtBoxPreco.Text),
-                                                                         Convert.ToInt32(txtBoxQuantidade.Text),
-                                                                         Convert.ToInt32(ddlProdutoSimilar.SelectedValue));
+                    inserir = Loja.Fachada.Fachada.ProdutoFachada.InsertSemSimilar(Convert.ToInt32(ddlDepartamento.SelectedValue),
+                                                                txtBoxNome.Text,
+                                                                Convert.ToDouble(txtBoxPreco.Text),
+                                                                Convert.ToInt32(txtBoxQuantidade.Text)
+                                                                );
+                }
+                else
+                {
+                     inserir = Loja.Fachada.Fachada.ProdutoFachada.Insert(Convert.ToInt32(ddlDepartamento.SelectedValue),
+                                                                        txtBoxNome.Text,
+                                                                        Convert.ToDouble(txtBoxPreco.Text),
+                                                                        Convert.ToInt32(txtBoxQuantidade.Text),
+                                                                        Convert.ToInt32(ddlProdutoSimilar.SelectedValue));
+                }
+
 
                 if (inserir == 1)
                 {

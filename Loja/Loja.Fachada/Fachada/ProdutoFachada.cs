@@ -42,6 +42,18 @@ namespace Loja.Fachada.Fachada
             return inserir;
         }
 
+        public static int InsertSemSimilar(int departamentoIdProduto, string nomeProduto, double precoProduto, int quantidadeProduto)
+        {
+            Loja.Objeto.Models.Produto produto = new Objeto.Models.Produto();
+
+            produto.DepartamentoProduto = departamentoIdProduto;
+            produto.NomeProduto = nomeProduto;
+            produto.PrecoProduto = precoProduto;
+            produto.QuantidadeProduto = quantidadeProduto;
+            int inserir = produtoNg.Insert2(produto);
+            return inserir;
+        }
+
         [DataObjectMethod(DataObjectMethodType.Update)]
         public static void Update(Loja.Objeto.Models.Produto produto)
         {

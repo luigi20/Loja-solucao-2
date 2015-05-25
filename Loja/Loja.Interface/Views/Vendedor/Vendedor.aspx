@@ -83,8 +83,7 @@
                     <ul class="list-inline pull-right">
                         <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
                     </ul>
-                    Produtos
-                <hr />
+                    &nbsp;<hr />
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">

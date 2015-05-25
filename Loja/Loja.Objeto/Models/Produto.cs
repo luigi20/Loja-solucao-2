@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using Loja.Objeto.DAO;
 namespace Loja.Objeto.Models
 {
     public class Produto
     {
-     
+        private Departamento departamento;
         private int idProduto;
         private int departamentoProduto;
         private string nomeProduto;
         private double precoProduto;
         private int quantidadeProduto;
         private int idProdutoSimilar;
+        private Produto produtoSimilar;
 
         public Produto()
         {
@@ -29,6 +30,33 @@ namespace Loja.Objeto.Models
             this.idProdutoSimilar = idProdutoSimilar;
         }
 
+        public Departamento Departamento
+        {
+            get
+            {
+                if (this.departamento == null)
+                {
+                    this.departamento = DepartamentoDAO.BuscarPorId(idProduto);
+                }
+
+                return departamento;
+            }
+
+        }
+
+        public Produto ProdutoSimilar
+        {
+            get
+            {
+                if (this.produtoSimilar == null)
+                {
+                    this.produtoSimilar = ProdutoDAO.BuscarPorId(idProdutoSimilar);
+                }
+
+                return produtoSimilar;
+            }
+
+        }
         public int IdProduto
         {
             get { return idProduto; }

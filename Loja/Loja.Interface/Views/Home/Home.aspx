@@ -67,7 +67,7 @@
                             <li><a href="../Pesquisar/Produto/Produto.aspx">Produto</a></li>
                             <li><a href="../Pesquisar/Vendedor/Vendedor.aspx">Venda </a></li>
                             <li><a href="">Registro de Venda</a></li>
-                            <li><a href="">Vendedor</a></li>
+                            <li><a href="../Pesquisar/Vendedor/Vendedor.aspx">Vendedor</a></li>
 
                         </ul>
 

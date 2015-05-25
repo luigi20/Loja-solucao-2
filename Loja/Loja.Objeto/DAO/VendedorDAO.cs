@@ -106,7 +106,8 @@ namespace Loja.Objeto.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select idVendedor,Departamento_idDepartamento,Nome_Vendedor,CPF_Vendedor from Vendedor ";
+            comando.CommandText = "Select idVendedor,Departamento_idDepartamento,Nome_Vendedor,CPF_Vendedor,"
+                                   +"Data_admissao_Vendedor,Situacao_Vendedor from Vendedor ";
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
             List<Vendedor> listaVendedores = new List<Vendedor>();
 
@@ -117,7 +118,8 @@ namespace Loja.Objeto.DAO
                 int idDepartamento = dr.GetOrdinal("Departamento_idDepartamento");
                 int nomeVendedor = dr.GetOrdinal("Nome_Vendedor");
                 int cpfVendedor = dr.GetOrdinal("CPF_Vendedor");
-
+                
+                int situacaoVendedor = dr.GetOrdinal("Situacao_Vendedor");
 
                 while (dr.Read())
                 {
@@ -127,7 +129,8 @@ namespace Loja.Objeto.DAO
                     vendedor.DepartamentoVendedor = dr.GetInt32(idDepartamento);
                     vendedor.NomeVendedor = dr.GetString(nomeVendedor);
                     vendedor.CpfVendedor = dr.GetString(cpfVendedor);
-
+                    
+                    vendedor.SituacaoVendedor = dr.GetString(situacaoVendedor);
 
                     listaVendedores.Add(vendedor);
                 }
