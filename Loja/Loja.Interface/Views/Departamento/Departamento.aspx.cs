@@ -12,7 +12,21 @@ namespace Loja.Interface.Views.Departamento
       
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["id"] != null)
+            {
+                List<Loja.Objeto.Models.Departamento> listaDepartamento = Loja.Objeto.DAO.DepartamentoDAO.listarTodos(Convert.ToInt32(Request.QueryString["id"].ToString() ));
+                foreach( Loja.Objeto.Models.Departamento departamento in listaDepartamento) 
+                {
+                    if (departamento.IdDepartamento.Equals(Convert.ToInt32(Request.QueryString["id"].ToString()))) 
+                    {
+                        txtBoxNome.Text = departamento.NomeDepartamento;
+                        txtBoxComissao.Text = Convert.ToString( departamento.PercComissaoDepartamento);
+                        txtBoxSigla.Text = departamento.SiglaDepartamento;
+                        ddlIdChefe.SelectedValue = Convert.ToString(departamento.ChefeDepartamentoVendedor);
+                        return;
+                    }
+                }
+            }
         }
 
       

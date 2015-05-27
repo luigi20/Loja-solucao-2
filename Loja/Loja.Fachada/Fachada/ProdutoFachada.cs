@@ -67,9 +67,9 @@ namespace Loja.Fachada.Fachada
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public static List<Loja.Objeto.Models.Produto> listarProduto()
+        public static List<Loja.Objeto.Models.Produto> listarProduto(int idDepartamento)
         {
-            return produtoNg.listarProduto();
+            return produtoNg.listarProduto(idDepartamento);
 
         }
     }

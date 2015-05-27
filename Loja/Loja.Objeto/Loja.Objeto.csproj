@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BO\ConexãoBanco.cs" />
+    <Compile Include="BO\ConexaoBanco.cs" />
     <Compile Include="BO\DepartamentoBO.cs" />
     <Compile Include="BO\ProdutoBO.cs" />
     <Compile Include="BO\VendedorBO.cs" />

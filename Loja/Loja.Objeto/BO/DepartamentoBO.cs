@@ -34,5 +34,7 @@ namespace Loja.Objeto.BO
 
             DepartamentoDAO.Delete(departamento);
         }
+
+     
     }
 }

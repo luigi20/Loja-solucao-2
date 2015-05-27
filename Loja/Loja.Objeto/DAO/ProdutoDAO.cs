@@ -83,11 +83,23 @@ namespace Loja.Objeto.DAO
             return produto;
         }
 
-        public static List<Produto> listarTodos()
+        public static List<Produto> listarTodos(int produtoId)
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select idProduto,Nome_Produto,Departamento_idDepartamento,Preco_Produto,Quantidade_Produto,idProduto_Similar from Produto";
+            comando.CommandText = @"Select idProduto,Nome_Produto,Departamento_idDepartamento,Preco_Produto,
+                                           Quantidade_Produto,idProduto_Similar
+                                    from Produto
+                                    where(idProduto = @idProduto) or idProduto is null";
+            if (produtoId <= 0)
+            {
+                comando.Parameters.AddWithValue("@idProduto", DBNull.Value);
+
+            }
+            else
+            {
+                comando.Parameters.AddWithValue("@idProduto", produtoId);
+            }
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
             List<Produto> listaProdutos = new List<Produto>();
 

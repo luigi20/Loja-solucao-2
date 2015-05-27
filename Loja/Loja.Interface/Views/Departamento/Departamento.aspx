@@ -66,12 +66,11 @@
                         </h5>
                     </a>
                         <ul class="list-unstyled collapse in" id="Ul1">
-                            <li><a href="">Departamento</a></li>
-                            <li><a href="">Produto</a></li>
-                            <li><a href="">Produto Similar</a></li>
+                            <li><a href="../Pesquisar/Departamento/Departamento.aspx">Departamento</a></li>
+                            <li><a href="../Pesquisar/Produto/Produto.aspx">Produto</a></li>
                             <li><a href="">Venda </a></li>
                             <li><a href="">Registro de Venda</a></li>
-                            <li><a href="">Vendedor</a></li>
+                            <li><a href="../Pesquisar/Vendedor/Vendedor.aspx">Vendedor</a></li>
                         </ul>
 
                     </li>

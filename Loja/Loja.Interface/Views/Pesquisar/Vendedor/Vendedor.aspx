@@ -42,17 +42,17 @@
                 <hr />
                 <ul class="list-unstyled">
                     <li class="nav-header"><a href="#" data-toggle="collapse" data-target="#userMenu">
-                        <li class="active"><a href="Home.aspx">Home</a></li>
+                        <li class="active"><a href="../../Home/Home.aspx">Home</a></li>
                         <h5>Cadastros 
                         </h5>
                     </a>
                         <ul class="list-unstyled collapse in" id="userMenu">
 
-                            <li><a href="../Departamento/Departamento.aspx">Departamento</a></li>
-                            <li><a href="../Produto/Produto.aspx">Produto</a></li>
+                            <li><a href="../../Departamento/Departamento.aspx">Departamento</a></li>
+                            <li><a href="../../Produto/Produto.aspx">Produto</a></li>
                             <li><a href="">Venda</a></li>
                             <li><a href="">Registro de Venda</a></li>
-                            <li><a href="../Vendedor/Vendedor.aspx">Vendedor</a></li>
+                            <li><a href="../../Vendedor/Vendedor.aspx">Vendedor</a></li>
                         </ul>
                     </li>
                     <hr />
@@ -63,11 +63,11 @@
                         </h5>
                     </a>
                         <ul class="list-unstyled collapse in" id="Ul1">
-                            <li><a href="../Pesquisar/Departamento/Departamento.aspx">Departamento</a></li>
-                            <li><a href="../Pesquisar/Produto/Produto.aspx">Produto</a></li>
+                            <li><a href="../Departamento/Departamento.aspx">Departamento</a></li>
+                            <li><a href="../Produto/Produto.aspx">Produto</a></li>
                             <li><a href="../Pesquisar/Vendedor/Vendedor.aspx">Venda </a></li>
                             <li><a href="">Registro de Venda</a></li>
-                            <li><a href="">Vendedor</a></li>
+                            <li><a href="Vendedor.aspx">Vendedor</a></li>
 
                         </ul>
 

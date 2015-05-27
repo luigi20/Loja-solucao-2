@@ -42,17 +42,17 @@
                 <hr />
                 <ul class="list-unstyled">
                     <li class="nav-header"><a href="#" data-toggle="collapse" data-target="#userMenu">
-                        <li class="active"><a href="Home.aspx">Home</a></li>
+                        <li class="active"><a href="../../Home/Home.aspx">Home</a></li>
                         <h5>Cadastros 
                         </h5>
                     </a>
                         <ul class="list-unstyled collapse in" id="userMenu">
 
-                            <li><a href="../Departamento/Departamento.aspx">Departamento</a></li>
-                            <li><a href="../Produto/Produto.aspx">Produto</a></li>
+                            <li><a href="../../Departamento/Departamento.aspx">Departamento</a></li>
+                            <li><a href="../../Produto/Produto.aspx">Produto</a></li>
                             <li><a href="">Venda</a></li>
                             <li><a href="">Registro de Venda</a></li>
-                            <li><a href="../Vendedor/Vendedor.aspx">Vendedor</a></li>
+                            <li><a href="../../Vendedor/Vendedor.aspx">Vendedor</a></li>
                         </ul>
                     </li>
                     <hr />
@@ -63,11 +63,11 @@
                         </h5>
                     </a>
                         <ul class="list-unstyled collapse in" id="Ul1">
-                            <li><a href="../Pesquisar/Departamento/Departamento.aspx">Departamento</a></li>
-                            <li><a href="../Pesquisar/Produto/Produto.aspx">Produto</a></li>
-                            <li><a href="../Pesquisar/Vendedor/Vendedor.aspx">Venda </a></li>
+                            <li><a href="../Departamento/Departamento.aspx">Departamento</a></li>
+                            <li><a href="Produto.aspx">Produto</a></li>
+                            <li><a href="">Venda </a></li>
                             <li><a href="">Registro de Venda</a></li>
-                            <li><a href="">Vendedor</a></li>
+                            <li><a href="../Vendedor/Vendedor.aspx">Vendedor</a></li>
 
                         </ul>
 
@@ -101,7 +101,7 @@
                                     <div class="control-group col-md-2">
                                         Nome
                                         <br />
-                                        <asp:DropDownList ID="ddlProduto" runat="server" DataSourceID="ODSProduto" AppendDataBoundItems ="true" DataTextField="NomeProduto" DataValueField="IdProduto">
+                                        <asp:DropDownList ID="ddlProduto" runat="server" DataSourceID="ODSProduto" AppendDataBoundItems ="True" DataTextField="NomeProduto" DataValueField="IdProduto">
                                          <asp:ListItem Selected="True" Text="" Value="-1"></asp:ListItem>
                                         </asp:DropDownList>
                                         <br />
@@ -109,12 +109,16 @@
 
                                             <asp:Button class="btn btn-success" ID="btnPesquisar" Text="Pesquisar" runat="server" />
                                         <br />
-                                        <asp:ObjectDataSource ID="ODSProduto" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listarProduto" TypeName="Loja.Fachada.Fachada.ProdutoFachada"></asp:ObjectDataSource>
                                     </div>
                                 </div>
                           
                                 <div class="control-group col-md-12">
                                     <label>
+                                    <asp:ObjectDataSource ID="ODSProduto" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listarProduto" TypeName="Loja.Fachada.Fachada.ProdutoFachada">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="ddlProduto" DefaultValue="-1" Name="idDepartamento" PropertyName="SelectedValue" Type="Int32" />
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
                                     </label>
                                     <div class="controls">
                                         <br />

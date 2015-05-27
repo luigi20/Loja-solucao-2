@@ -11,7 +11,9 @@ namespace Loja.Fachada.Fachada
 {
     [DataObject(true)]
     public class DepartamentoFachada
+
     {
+        private int departamento = 0;
         private static Loja.Negocio.DepartamentoNg departamentoNg = new Negocio.DepartamentoNg();
 
         [DataObjectMethod(DataObjectMethodType.Select)]
@@ -53,9 +55,10 @@ namespace Loja.Fachada.Fachada
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public static List<Loja.Objeto.Models.Departamento> listarDepartamento()
+        public static List<Loja.Objeto.Models.Departamento> listarDepartamento(int departamento)
         {
-            return departamentoNg.listarDepartamento();
+           
+            return departamentoNg.listarDepartamento(departamento);
 
         }
 

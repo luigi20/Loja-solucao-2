@@ -66,12 +66,11 @@
                             </h5>
                         </a>
                             <ul class="list-unstyled collapse in" id="Ul1">
-                                <li><a href="">Departamento</a></li>
-                                <li><a href="">Produto</a></li>
-                                <li><a href="">Produto Similar</a></li>
+                                <li><a href="../Pesquisar/Departamento/Departamento.aspx">Departamento</a></li>
+                                <li><a href="../Pesquisar/Produto/Produto.aspx">Produto</a></li>
                                 <li><a href="">Venda </a></li>
                                 <li><a href="">Registro de Venda</a></li>
-                                <li><a href="">Vendedor</a></li>
+                                <li><a href="../Pesquisar/Vendedor/Vendedor.aspx">Vendedor</a></li>
                             </ul>
 
                         </li>
@@ -148,7 +147,11 @@
                                             <asp:Button class="btn btn-primary" ID="btnAlterar" runat="server" Text="Alterar" />
                                             <asp:Button class="btn btn-danger" ID="btnExcluir" runat="server" Text="Excluir" />
 
-                                            <asp:ObjectDataSource ID="ProdutoODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listarProduto" TypeName="Loja.Fachada.Fachada.ProdutoFachada"></asp:ObjectDataSource>
+                                            <asp:ObjectDataSource ID="ProdutoODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listarProduto" TypeName="Loja.Fachada.Fachada.ProdutoFachada">
+                                                <SelectParameters>
+                                                    <asp:Parameter Name="idDepartamento" Type="Int32" />
+                                                </SelectParameters>
+                                            </asp:ObjectDataSource>
 
                                         </div>
                                     </div>
@@ -158,7 +161,11 @@
                             <!--/panel-->
                         </div>
                         <!--/col-span-12-->
-                        <asp:ObjectDataSource ID="DepartamentoODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listarDepartamento" TypeName="Loja.Fachada.Fachada.DepartamentoFachada"></asp:ObjectDataSource>
+                        <asp:ObjectDataSource ID="DepartamentoODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listarDepartamento" TypeName="Loja.Fachada.Fachada.DepartamentoFachada">
+                            <SelectParameters>
+                                <asp:Parameter Name="departamento" Type="Int32" />
+                            </SelectParameters>
+                        </asp:ObjectDataSource>
                     </div>
                     <!--/row-->
                     <hr />

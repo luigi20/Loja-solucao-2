@@ -31,13 +31,13 @@ namespace Loja.Interface.Views.Pesquisar.Departamento {
         protected global::System.Web.UI.WebControls.DropDownList ddlDepartamento;
         
         /// <summary>
-        /// Controle btnCadastrar.
+        /// Controle btnPesquisar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCadastrar;
+        protected global::System.Web.UI.WebControls.Button btnPesquisar;
         
         /// <summary>
         /// Controle ODSDepartamento.
@@ -56,14 +56,5 @@ namespace Loja.Interface.Views.Pesquisar.Departamento {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gdvDepartamento;
-        
-        /// <summary>
-        /// Controle ODSGridDepart.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ODSGridDepart;
     }
 }

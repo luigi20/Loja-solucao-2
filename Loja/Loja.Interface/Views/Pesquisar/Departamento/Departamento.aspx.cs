@@ -12,25 +12,13 @@ namespace Loja.Interface.Views.Pesquisar.Departamento
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void btnPesquisar_Click(object sender, EventArgs e)
         {
-
-         Loja.Objeto.Models.Departamento departamento = Loja.Fachada.Fachada.DepartamentoFachada.Obter(int.Parse(ddlDepartamento.SelectedValue));
-         List<Loja.Objeto.Models.Departamento> listaDepartamento = new List<Objeto.Models.Departamento>();
-         if (departamento != null)
-         {
-             listaDepartamento.Add(departamento);
-             gdvDepartamento.DataSource = listaDepartamento;
-             
-             return;
-         }
-         else
-         {
-             this.ExibirMensagem("Departamento Não Encontrado !!!");
-         }
+            
+       
      
         
            /* List<Paciente> listaPaciente = (List<Paciente>)Session["listaPaciente"];
@@ -80,6 +68,7 @@ namespace Loja.Interface.Views.Pesquisar.Departamento
         }
         protected void btnAlterar_Click(object sender, EventArgs e)
         {
+           
            /* List<Paciente> listaPacientes = (List<Paciente>)Session["listaPaciente"];
             GridViewRow row =
                 (GridViewRow)((Button)sender).NamingContainer;

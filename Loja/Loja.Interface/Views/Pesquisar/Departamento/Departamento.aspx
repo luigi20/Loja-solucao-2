@@ -42,17 +42,17 @@
                 <hr />
                 <ul class="list-unstyled">
                     <li class="nav-header"><a href="#" data-toggle="collapse" data-target="#userMenu">
-                        <li class="active"><a href="Home.aspx">Home</a></li>
+                        <li class="active"><a href="../../Home/Home.aspx">Home</a></li>
                         <h5>Cadastros 
                         </h5>
                     </a>
                         <ul class="list-unstyled collapse in" id="userMenu">
 
-                            <li><a href="../Departamento/Departamento.aspx">Departamento</a></li>
-                            <li><a href="../Produto/Produto.aspx">Produto</a></li>
+                            <li><a href="../../Departamento/Departamento.aspx">Departamento</a></li>
+                            <li><a href="../../Produto/Produto.aspx">Produto</a></li>
                             <li><a href="">Venda</a></li>
                             <li><a href="">Registro de Venda</a></li>
-                            <li><a href="../Vendedor/Vendedor.aspx">Vendedor</a></li>
+                            <li><a href="../../Vendedor/Vendedor.aspx">Vendedor</a></li>
                         </ul>
                     </li>
                     <hr />
@@ -63,11 +63,11 @@
                         </h5>
                     </a>
                         <ul class="list-unstyled collapse in" id="Ul1">
-                            <li><a href="../Pesquisar/Departamento/Departamento.aspx">Departamento</a></li>
-                            <li><a href="../Pesquisar/Produto/Produto.aspx">Produto</a></li>
-                            <li><a href="../Pesquisar/Vendedor/Vendedor.aspx">Venda </a></li>
+                            <li><a href="Departamento.aspx">Departamento</a></li>
+                            <li><a href="../Produto/Produto.aspx">Produto</a></li>
+                            <li><a href="">Venda </a></li>
                             <li><a href="">Registro de Venda</a></li>
-                            <li><a href="">Vendedor</a></li>
+                            <li><a href="../Vendedor/Vendedor.aspx">Vendedor</a></li>
 
                         </ul>
 
@@ -107,9 +107,13 @@
                                         <br />
                                         <br />
 
-                                            <asp:Button class="btn btn-success" ID="btnCadastrar" Text="Pesquisar" runat="server" OnClick="btnPesquisar_Click" />
+                                            <asp:Button class="btn btn-success" ID="btnPesquisar" Text="Pesquisar" runat="server"  />
                                         <br />
-                                        <asp:ObjectDataSource ID="ODSDepartamento" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listarDepartamento" TypeName="Loja.Fachada.Fachada.DepartamentoFachada"></asp:ObjectDataSource>
+                                        <asp:ObjectDataSource ID="ODSDepartamento" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="listarDepartamento" TypeName="Loja.Fachada.Fachada.DepartamentoFachada" DataObjectTypeName="Loja.Objeto.Models.Departamento" DeleteMethod="Delete">
+                                            <SelectParameters>
+                                                <asp:ControlParameter ControlID="ddlDepartamento" DefaultValue="-1" Name="departamento" PropertyName="SelectedValue" Type="Int32" />
+                                            </SelectParameters>
+                                        </asp:ObjectDataSource>
                                     </div>
                                 </div>
                           
@@ -118,7 +122,7 @@
                                     </label>
                                     <div class="controls">
                                         <br />
-                                        <asp:GridView ID="gdvDepartamento" runat="server" AutoGenerateColumns="False" DataKeyNames="IdDepartamento" DataSourceID="ODSDepartamento" CellPadding="4" ForeColor="#333333" Width="717px">
+                                        <asp:GridView ID="gdvDepartamento" runat="server" AutoGenerateColumns="False"  DataKeyNames="IdDepartamento" DataSourceID="ODSDepartamento" CellPadding="4" ForeColor="#333333" Width="717px">
                                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                             <Columns>
                                                 <asp:BoundField DataField="IdDepartamento" HeaderText="Id" SortExpression="IdDepartamento" >
@@ -150,9 +154,9 @@
                                                 </asp:BoundField>
                                                  <asp:TemplateField HeaderText="Ações">
                                                     <ItemTemplate>
-                                                        <asp:Button ID="btnAlterar" runat="server" OnClick="btnAlterar_Click" Text="Alterar"
+                                                        <asp:Button ID="btnAlterar" runat="server" OnClick="btnAlterar_Click" PostBackUrl='<%#  Eval("IdDepartamento", "../../Departamento/Departamento.aspx?id={0}") %>' Text="Alterar"
                                                             CausesValidation="false" />
-                                                        <asp:Button ID="btnExcluir" runat="server" OnClick="btnExcluir_Click" Text="Excluir"
+                                                        <asp:Button ID="btnExcluir" runat="server" Text="Excluir"
                                                             CausesValidation="false" />
                                                     </ItemTemplate>
                                                     <ItemStyle HorizontalAlign="Center" />
@@ -169,7 +173,6 @@
                                             <SortedDescendingCellStyle BackColor="#FFFDF8" />
                                             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                                         </asp:GridView>
-                                        <asp:ObjectDataSource ID="ODSGridDepart" runat="server"></asp:ObjectDataSource>
                                     </div>
                                 </div>
                             </div>

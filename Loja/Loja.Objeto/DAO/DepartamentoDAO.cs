@@ -56,7 +56,8 @@ namespace Loja.Objeto.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select * from Departamento where idDepartamento = @idDepartamento";
+            comando.CommandText = @"Select * from Departamento 
+                                        where idDepartamento = @idDepartamento";
             comando.Parameters.AddWithValue("@idDepartamento", idDepartamento);
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
             Departamento departamento = new Departamento();
@@ -80,11 +81,24 @@ namespace Loja.Objeto.DAO
             return departamento;
         }
 
-        public static List<Departamento> listarTodos()
+        public static List<Departamento> listarTodos(int departamentoId)
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select idDepartamento,Nome_Departamento,Sigla_Departamento, Perc_Departamento,idChefeDepartamento from Departamento";
+            comando.CommandText = @"Select idDepartamento,Nome_Departamento,Sigla_Departamento, Perc_Departamento,idChefeDepartamento 
+                                    from Departamento 
+                                    Where (idDepartamento = @idDepartamento) or @idDepartamento is null";
+
+            if (departamentoId <= 0)
+            {
+                comando.Parameters.AddWithValue("@idDepartamento", DBNull.Value);
+
+            }
+            else
+            {
+                comando.Parameters.AddWithValue("@idDepartamento", departamentoId);
+            }
+           
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
             List<Departamento> listaDepartamentos = new List<Departamento>();
             

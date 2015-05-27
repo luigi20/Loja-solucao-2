@@ -15,9 +15,9 @@ namespace Loja.Negocio
         {
             return Loja.Objeto.DAO.ProdutoDAO.BuscarPorId(id);
         }
-        public List<Loja.Objeto.Models.Produto> listarProduto()
+        public List<Loja.Objeto.Models.Produto> listarProduto(int idProduto)
         {
-            return Loja.Objeto.DAO.ProdutoDAO.listarTodos();
+            return Loja.Objeto.DAO.ProdutoDAO.listarTodos(idProduto);
         }
 
         public void Insert(Loja.Objeto.Models.Produto produto)

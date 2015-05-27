@@ -106,8 +106,8 @@ namespace Loja.Objeto.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "Select idVendedor,Departamento_idDepartamento,Nome_Vendedor,CPF_Vendedor,"
-                                   +"Data_admissao_Vendedor,Situacao_Vendedor from Vendedor ";
+            comando.CommandText = @"Select idVendedor,Departamento_idDepartamento,Nome_Vendedor,CPF_Vendedor,
+                                   Data_admissao_Vendedor,Situacao_Vendedor from Vendedor ";
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
             List<Vendedor> listaVendedores = new List<Vendedor>();
 
@@ -148,12 +148,12 @@ namespace Loja.Objeto.DAO
             string Situacao = "Ativo";
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "(Select idVendedor,Departamento_idDepartamento,Nome_Vendedor,CPF_Vendedor,Nivel_Escolaridade_Vendedor" +
-                                  " from Vendedor where Nivel_Escolaridade_Vendedor = @nivelEscolaridade and Situacao_Vendedor = @situacaoVendedor) "
-                                   +" except "+
-                                   "(Select Vendedor.idVendedor,Vendedor.Departamento_idDepartamento,Vendedor.Nome_Vendedor,"+ 
-                                   "Vendedor.CPF_Vendedor,Vendedor.Nivel_Escolaridade_Vendedor from Vendedor inner join "+
-                                   " Departamento on(Vendedor.idVendedor = Departamento.idChefeDepartamento ))";
+            comando.CommandText = @"(Select idVendedor,Departamento_idDepartamento,Nome_Vendedor,CPF_Vendedor,Nivel_Escolaridade_Vendedor
+                                   from Vendedor where Nivel_Escolaridade_Vendedor = @nivelEscolaridade and Situacao_Vendedor = @situacaoVendedor) 
+                                    except 
+                                   (Select Vendedor.idVendedor,Vendedor.Departamento_idDepartamento,Vendedor.Nome_Vendedor, 
+                                   Vendedor.CPF_Vendedor,Vendedor.Nivel_Escolaridade_Vendedor from Vendedor inner join 
+                                    Departamento on(Vendedor.idVendedor = Departamento.idChefeDepartamento ))";
             comando.Parameters.AddWithValue("@nivelEscolaridade", nivelEscolaridade);
             comando.Parameters.AddWithValue("@situacaoVendedor", Situacao);
             SqlDataReader dr = ConexãoBanco.Selecionar(comando);
